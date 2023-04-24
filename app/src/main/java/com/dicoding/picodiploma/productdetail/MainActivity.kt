@@ -53,3 +53,31 @@ class MainActivity : AppCompatActivity() {
 // - france: values-fr
 // - spain: values-es
 // - etc
+
+// Alternative Layout is a way to set specific layout for certain device size
+
+// `smallest width` value for each devices:
+// - 320dp: for smartphone (240x320 ldpi, 320x480 mdpi, 480x800 hdpi, etc)
+// - 480dp: for big smartphone around 5" (480x800 mdpi)
+// - 600dp: for tablet around 7" (600x1024 mdpi)
+// - 720dp: for big tablet around 10" (720x1280 mdpi, 800x1280 mdpi, etc)
+// --- infographic: https://dicoding-web-img.sgp1.cdn.digitaloceanspaces.com/original/academy/dos:c75db90253765d9cfc7c6e877379a66a20220119143508.jpeg
+
+// usage of `smallest width`:
+// - res/layout/main_activity.xml -> for device with width below 600dp
+// - res/layout-sw600dp/main_activity.xml -> for device width above 600dp (7")
+
+// `available width` could also be used instead of `smallest width`
+// - res/layout/main_activity.xml -> for device with `below 600dp` available width
+// - res/layout-w600dp/main_activity.xml -> for device with `600dp` available width
+
+// `available height` could also be used:
+// - res/layout-h600dp/main_activity.xml -> for device with `600dp` available height
+
+// `orientation qualification` for landscape/portrait landscape:
+// - res/layout/main_activity.xml -> for portrait
+// - res/layout-land/main_activity.xml -> for landscape
+// - res/layout-sw600dp/main_activity.xml -> for portrait
+// - res/layout-sw600dp-land/main_activity.xml -> for landscape
+
+// `Layout Validation` Android Studio feature to test every screen layout you could
