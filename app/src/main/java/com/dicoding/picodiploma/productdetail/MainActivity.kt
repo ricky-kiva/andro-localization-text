@@ -22,6 +22,24 @@ class MainActivity : AppCompatActivity() {
         setupAction()
     }
 
+    private fun setupData() {
+        val data = RemoteDataSource(this)
+        val product = data.getDetailProduct()
+        product.apply {
+            binding.apply {
+                previewImageView.setImageResource(image)
+                nameTextView.text = store
+                storeTextView.text = store
+                colorTextView.text = color
+                sizeTextView.text = size
+                descTextView.text = desc
+                priceTextView.text = price
+                dateTextView.text = getString(R.string.dateFormat, date)
+                ratingTextView.text = getString(R.string.ratingFormat, rating, countRating)
+            }
+        }
+    }
+
     private fun setupView() {
         @Suppress("DEPRECATION")
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
