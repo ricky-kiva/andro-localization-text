@@ -81,3 +81,39 @@ class MainActivity : AppCompatActivity() {
 // - res/layout-sw600dp-land/main_activity.xml -> for landscape
 
 // `Layout Validation` Android Studio feature to test every screen layout you could
+
+// Information formatting in an app includes date, time, numbering, currency, etc from user's locale
+
+// DateFormat is an abstract class to configure date & time using locale
+// example usage:
+// - DateFormat.getDateInstance().format(myDate)
+// - DateFormat.getDateInstance(DateFormat.FULL, Locale.CANADA)
+
+// DateFormat styles:
+// - FULL -> Tuesday, April 12, 2021 AD / 3:50:12pm PST
+// - LONG -> January 12, 1952 / 3:14:24pm
+// - MEDIUM -> Jan 12, 1952
+// - SHORT -> 12.13.52 or 3:30pm (display time / numeric number)
+
+// SimpleDateFormat is a subclass from DateFormat that could format/parse date-string using pattern
+// - example usage: SimpleDateFormat("yyyy.MM.dd 'at' HH:mm:ss", Locale.ENGLISH).format(myDate)
+// - example formatting:
+// --- dd MMMM yyyy -> 31 Januari 2021
+// --- dd-MM-yyyy -> 31-01-2021
+// --- dd/MM/yy -> 31/01/21
+// --- EEEE, dd MMMM yyyy -> Jumat, 01 Januari 2021
+
+// NumberFormat is a class to format numbers & numbering
+// - example usage: NumberFormat.getNumberInstance(Locale.FRENCH).format(myNumber)
+
+// DecimalFormat is a subclass from NumberFormat to format decimal value
+// - DecimalFormat supports variety of numbering:
+// --- integer (212), fraction (3.14), scientific notation (1.23E4), percentage (99%), or currency ($414)
+// - example usage: DecimalFormat("#,###.##")
+
+// NumberFormat.getCurrencyInstance to do currency formatting. Usage:
+/*
+// NumberFormat.getCurrencyInstance()
+// Locale.getDefault().country
+// if (deviceLocale.equals("ID")) { mPrice *= mInExchangeRate }
+ */
