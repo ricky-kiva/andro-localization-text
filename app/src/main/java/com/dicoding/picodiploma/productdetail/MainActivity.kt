@@ -140,3 +140,20 @@ class MainActivity : AppCompatActivity() {
 // Locale.getDefault().country
 // if (deviceLocale.equals("ID")) { mPrice *= mInExchangeRate }
  */
+
+// `text-to-speech` is one of the `Accessibility` that could be accessed using Android's `TalkBack` app
+// 2 things need to be understand to apply element's label & description, that is needed for `TalkBack`:
+// - if stated on static & unchanged content, do on layout XML
+// - if stated on dynamic content, do on Kotlin's file
+
+// `android:contentDescription` is an attributes to label ImageView / ImageButton
+// `android:hint` is an attributes to label EditText
+// `android:labelFor` is an attributes to label any View on Android 4.2 above (API level 17)
+
+// Tips for Accessibility:
+// - add content description to any non-textual component (ImageView/ImageButton)
+// - add content description to non-textual button (button with only symbol)
+// - Commonly it's unnecessary to put content description to TextView / CheckBox
+// - Use verbs, "Delete item" rather than "Trash Bin"
+// - No use to include element name such "Button"
+// - Make content description unique & accurate
