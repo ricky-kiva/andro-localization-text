@@ -8,6 +8,10 @@ import android.provider.Settings
 import android.view.WindowInsets
 import android.view.WindowManager
 import com.dicoding.picodiploma.productdetail.databinding.ActivityMainBinding
+import com.dicoding.picodiploma.productdetail.Helper.*
+import com.dicoding.picodiploma.productdetail.Helper.Companion.withCurrencyFormat
+import com.dicoding.picodiploma.productdetail.Helper.Companion.withDateFormat
+import com.dicoding.picodiploma.productdetail.Helper.Companion.withNumberingFormat
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         setupView()
         setupAction()
+        setupData()
     }
 
     private fun setupData() {
@@ -33,9 +38,9 @@ class MainActivity : AppCompatActivity() {
                 colorTextView.text = color
                 sizeTextView.text = size
                 descTextView.text = desc
-                priceTextView.text = price
-                dateTextView.text = getString(R.string.dateFormat, date)
-                ratingTextView.text = getString(R.string.ratingFormat, rating, countRating)
+                priceTextView.text = price.withCurrencyFormat()
+                dateTextView.text = getString(R.string.dateFormat, date.withDateFormat())
+                ratingTextView.text = getString(R.string.ratingFormat, rating.withNumberingFormat(), countRating.withNumberingFormat())
             }
         }
     }

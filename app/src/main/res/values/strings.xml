@@ -12,6 +12,7 @@
     <string name="date">5/8/2021</string>
     <string name="countRating">1249</string>
 
+    <!-- %1$s sets first argument, %2$s sets second argument, etc -->
     <string name="dateFormat">Uploaded on %1$s</string>
     <string name="ratingFormat">%1$s (%2$s)</string>
 </resources>
